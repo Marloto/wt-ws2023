@@ -1,1 +1,1 @@
-# wt-ws2023
+# Webtechnologien
