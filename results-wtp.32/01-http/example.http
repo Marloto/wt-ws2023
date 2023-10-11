@@ -1,0 +1,11 @@
+GET https://www.thi.de/typo3conf/ext/in2template/Resources/Public/Images/thi_logo_vertikal.png HTTP/1.1
+
+###
+
+GET / HTTP/1.1
+Host: online-lectures-cs.thi.de
+
+###
+
+GET /resources/test.txt HTTP/1.1
+Host: online-lectures-cs.thi.de

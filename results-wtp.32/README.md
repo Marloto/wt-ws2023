@@ -1,0 +1,25 @@
+# Notizen vom 11.10.2023
+
+- Installieren Sie VSC: https://code.visualstudio.com/download
+- Erstellen Sie einen Ordner
+- Öffnen Sie den Ordner in VSC mit `File -> Open Folder`
+- Erstellen Sie einen HTTP-Request in example.http für www.thi.de
+- Alternativen: Postman, AdvancedRestClient, cURL, wget, httpie, 
+  - reqbin.com/ (https://www.thi.de/informatik/studiengaenge-i/)
+- Weitere Beispiele: Erstellen Sie einen HTTP Request für online-lectures-cs.thi.de und /ressources/test.txt
+- IP Adresse, wo kommt die her?
+    - DNS Server
+    - Es gibt verschiedene DNS-Server im Internet
+    - zuerst brauchen wir den DNS-Server der Informationen für "de" verwaltet, man sucht nach NS-Entry, verweis auf andere Domain -> f.nic.de
+    - über den DNS-Server hinter f.nic.de kann man abfragen, welcher A-Record sich hinter thi.de verbirgt
+    - Alternativ www.thi.de, NS für thi.de notwendig -> dns2.lrz.bayern
+    - Für A-Record kann bei dns2.lrz.bayern nach www.thi.de gefragt werden
+    - Selbst DNS-Server müssen aufgelöst werden zu einem A-Record, damit man ein TCP/IP-Paket schicken kann
+- VSC Tips / Tastaturkürzel
+    - Alt + Click erzeugt Cursor
+    - Option / Alt + Shift + Pfeil Hoch / Runter -> Duplizieren
+    - Cmd / Strg + D -> Fügt Cursor nach Suchergebnissen dazu
+    - Cmd / Strg + Shift + K -> Delete Line
+    - Option / Alt + Z
+    - Cmd / Strg + P -> anzeige aktuell geöffneter Dateien
+    - Extension: Live-Server (optional) kann anschließend mittels "Go Live" am unteren Rand gestartet werden, POST-Requests funktionieren nicht korrekt! (siehe Formulare)
