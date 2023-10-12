@@ -1,0 +1,17 @@
+GET / HTTP/1.1
+Host: www.thi.de
+
+###
+
+GET /fileadmin/_processed_/f/5/csm_360Grad_Startseite_zuschnitt_207165fc77.png HTTP/1.1
+Host: www.thi.de
+
+###
+
+GET / HTTP/1.1
+Host: de.wikipedia.org
+
+###
+
+GET /resources/test.txt HTTP/1.1
+Host: online-lectures-cs.thi.de
