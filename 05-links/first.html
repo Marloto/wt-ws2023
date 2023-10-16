@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Link-Beispiele</h1>
+    <h2 id="anchor">Anchor</h2>
+    <!-- a-Tag und href-Attribut -->
+    <!-- Welche Formen kann href haben? -->
+    <!-- Verwendung einer URL -->
+    <p><a href="https://www.thi.de/">Test Link 1: URL</a></p>
+    <!-- Teile des Pfads als Link-Ziel: relativer Link -->
+    <p><a href="irgend.html">Test Link 2: Datei</a></p>
+    <p><a href="../05-links/irgend.html">Test Link 2.1: Datei</a></p>
+    <p><a href="../04-list-examples/lists.html">Test Link 2.2: Datei</a></p>
+    <!-- notwendige URLS: http://127.0.0.1:5500/05-links/irgend.html -->
+    <!-- Vollständigen Pfad als Link-Ziel: absoluter Link, ehr vermeiden -->
+    <p><a href="/05-links/irgend.html">Test Link 3: Datei</a></p>
+    <!-- notwendige URLS: http://127.0.0.1:5500/05-links/irgend.html -->
+
+    <!-- Verlinkungsregeln gelten überall, nicht nur href! Beispiel src-Attribut im Bild -->
+    <h2>Images</h2>
+    <p>
+        <img src="https://www.thi.de/fileadmin/_processed_/1/9/csm_Startseite_Marketplace_7f0a83c5c6.png">
+        <img src="../03-more-html-examples/some-img.jpg">
+    </p>
+
+    <!-- Fragmente! -->
+    <h2>Fragments</h2>
+    <p><a href="#abc">Test Fragment Link</a></p>
+    <!-- browser füllt den rest auf, hier: http://127.0.0.1:5500/05-links/first.html#abc -->
+    <!-- derzeit passiert nichts, beobachtung nur, dass der link korrekt gebaut wird -->
+    <!-- es fehlen die Sprungpunkte! -->
+    <p><a href="#anchor">Jump to Anchor-ID</a></p>
+    <p><a href="irgend.html#unten">Jump to "unten" ID in irgend.html</a></p>
+    <p><a href="https://de.wikipedia.org/wiki/Eierlegende_Wollmilchsau#Rezeption">Beliebige URL</a></p>
+
+    <!-- Spezial bis CSS, für Aufgabe 1 wenn Buttons für Links genutzt werden -->
+    <h2>Button-Beispiel</h2>
+    <a href="irgend.html"><button>Test</button></a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>
