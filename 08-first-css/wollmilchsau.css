@@ -1,0 +1,59 @@
+h1, h2 {
+    color: rgb(31, 80, 139);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #CCC;
+    /** border-bottom: 0.5px solid lightgray; **/
+}
+
+html {
+    font-family: sans-serif;
+}
+
+.source {
+    color: #CCC;
+}
+
+a {
+    color: rgb(141, 46, 20);
+    text-decoration: none;
+}
+
+sup {
+    font-size: 0.5em;
+}
+
+input[type="submit"] {
+    background-color: lightblue;
+}
+
+input {
+    border: 1px solid gray;
+}
+
+input[type="submit"] {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 0px;
+}
+
+input[type="password"] {
+    border-left: 0px;
+}
+
+input[type="text"] {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: 0px;
+}
+
+div > ul > li, div > ul > ul > li {
+    color: red;
+}
+
+li ~ li {
+    text-decoration: underline;
+}
+ h1 ~ p {
+    color: green;
+ }

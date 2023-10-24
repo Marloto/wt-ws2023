@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            display: block; /* ist default für div */
+            margin: 0 auto; /* center über auto an links und rechts */
+            background-color: yellow;
+            /*position: relative; */
+        }
+        .badge {
+            /*position: absolute;
+            right: 0px;*/
+            float: right;
+        }
+        .example {
+            background-color: red ;
+            width: 100px;
+            height: 100px;
+
+            position: absolute;
+            /* top, left, right, bottom */
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="example">
+    </div>
+    <div class="container">
+        <h1>Lorem, ipsum dolor. <span class="badge">(1)</span></h1>
+    </div>
+</body>
+</html>

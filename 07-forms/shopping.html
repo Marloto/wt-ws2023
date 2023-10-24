@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="">
+        <p><label for="name">Name:</label> <input id="name" name="" required minlength="1" maxlength="100"></p>
+        <p><label for="street">Anschrift:</label> <input id="street" required></p>
+        <p><label for="plz">Postleitzahl:</label> <input id="plz" type="number" min="1" max="99999"></p>
+        <p><label for="city">Stadt:</label> <input id="city"></p>
+        <p><label for="mail">E-Mail:</label> <input type="email" id="mail"></p>
+        <hr>
+        <p>
+            <input type="checkbox" id="geschenk" value="1234">
+            <label for="geschenk">Als Geschenk verpacken?</label></p>
+        <hr>
+        
+        <p>
+            <label for="mitteilung">Mitteilung:</label> <textarea id="mitteilung" placeholder="Example"></textarea>
+        </p>
+
+        <hr>
+
+        <p>
+            <input type="radio" id="a" name="abc"><label for="a">Orangen á 4,00€</label><br>
+            <input type="radio" id="b" name="abc"><label for="b">Weihnachtskalender á 10,00€</label><br>
+            <input type="radio" id="c" name="abc"><label for="c">Socken á 3,99€</label>
+        </p>
+
+        <p><label for="count">Anzahl:</label> <input id="count" type="number" min="1" max="99999" value="1"></p>
+
+        <hr>
+
+        <p>
+            <label for="versand">Versand mit?</label>
+            <select id="versand">
+                <option>DHL</option>
+                <option>UPS</option>
+                <option>Hermes</option>
+                <option>What Ever?!</option>
+            </select>
+        </p>
+
+        <hr>
+
+        <p>
+            <a href="unsinn.html"><input type="button" value="Zurück zur Übersicht"></a>
+            <!--input type="submit" value="Absenden"-->
+            <button type="reset">Zurücksetzen</button>
+            <button type="submit">Absenden</button>
+        </p>
+    </form>
+</body>
+</html>

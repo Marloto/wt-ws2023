@@ -1,0 +1,26 @@
+p {
+    color: purple;
+}
+#abc {
+    text-decoration: underline;
+}
+.fancy {
+    font-style: italic;
+}
+.other {
+    font-weight: bold;
+}
+
+/* Selektiert ein Element mit dem Tag-Namen p, der Klasse other und der id xyz*/
+p.other#xyz {
+    font-size: 0.5rem;
+}
+
+/* Kombinierte Klassen: beide Klassen müssen angegeben sein am HTML Element */
+.fancy.more {
+    font-family: 'Times New Roman', Times, serif;
+}
+/* Regeln für mehrere Klassen: Kommaliste verwenden */
+.fancy, .more {
+    
+}

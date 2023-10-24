@@ -1,0 +1,7 @@
+GET / HTTP/1.1
+Host: www.thi.de
+
+###
+
+GET /resources/test.txt HTTP/1.1
+Host: online-lectures-cs.thi.de
