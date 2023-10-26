@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Ränder werden über in CSS über
+           padding und margin */
+        html, body {
+            margin: 0px;
+            padding: 0px;
+        }
+        .content {
+            background-color: yellow;
+            padding: 20px;
+            margin: 0px auto;
+            width: 400px;
+            display: block; /* block ist notwendig, aber bei div sowieso default */
+        }
+        /* Arten von Selektoren in CSS:
+           - Class-Selektor -> .class-name
+           - Tag-Selektor -> tag-name
+           - ID-Selektor -> #id-name
+           - Attribut-Selector [...]
+           - Kontext -> Kind-Selektor, Direktes Kind Selektor: z.B. .content > h1 
+           - Kombination: tag.class#id
+         */
+         .some-line .badge {
+            float: right;
+         }
+
+         .example {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            /* top, left, right, bottom*/
+            bottom: 0px;
+            right: 0px;
+         }
+         .content {
+            position: relative;
+         }
+         .some-form {
+            width: 400px;
+            background-color: bisque;
+            margin: 0 auto;
+         }
+         .some-form label {
+            width: 150px;
+            display: inline-block; /* notwendig damit width funktioniert */
+            text-align: right;
+            padding-right: 10px;
+            background-color: yellow;
+         }
+         /** position sticky für scrollbasierte 
+             feste position, fixed für browserfenster feste position */
+    </style>
+</head>
+<body>
+    <div id="foo" class="content abc xyz">
+        <h1>Text</h1>
+        <p>Lorem ipsum dolor <strong>sit</strong> amet consectetur adipisicing elit. Ipsa voluptatem magni fuga ipsum dignissimos! Nesciunt incidunt sapiente aspernatur nulla, necessitatibus, facere quibusdam tempore praesentium provident maxime ut repudiandae veritatis quis.</p>
+        <div class="example">
+    
+        </div>
+    </div>
+    <div>
+        <p class="some-line">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, et. <span class="badge">(1)</span></p>
+    </div>
+    <div class="some-form">
+        <p><label>Test</label><input></p>
+        <p><label>Something</label><input></p>
+    </div>
+</body>
+</html>
