@@ -55,16 +55,20 @@ h1 {
 .container {
     width: 900px;
     margin: 0 auto;
+    box-sizing: border-box;
+    padding-left: 10pt;
+    padding-right: 10pt;
 }
 .teaser img {
     width: 100vw;
-    height: 50vh; /* vorsicht bei width + height verwendung, verzerrt bilder! */
+    height: 100%; /* vorsicht bei width + height verwendung, verzerrt bilder! */
     object-fit: cover;  /* erlaubt entzerren, durch füllen der fläche mit teilausschnitt */
     object-position: center;
 }
 
 .teaser {
     border-bottom: 5pt solid orange;
+    height: 50vh;
 }
 
 a {
@@ -85,6 +89,95 @@ a:hover {
     text-align: right;
 }
 
+.newsletter {
+    background-color: #EEE;
+    padding-top: 15pt;
+    padding-bottom: 25pt;
+}
+
+/** display grid und display flex */
+/** label, input als inline-block im display, dadurch breiten */
+.newsletter label {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+.newsletter input {
+    width: 80%;
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 2pt 10pt;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.newsletter input[type="checkbox"] {
+    width: auto;
+    margin-left: 20%;
+}
+
+.newsletter input[type="checkbox"] + label {
+    display: inline;
+    padding-left: 10pt;
+    
+}
+
+.newsletter button {
+    color: white;
+    background-color: orange;
+    border: 0px;
+    font-size: 1.25em;
+    padding: 5pt 15pt;
+    margin-left: 20%;
+}
+
+.newsletter div {
+    margin-bottom: 10pt;
+}
+
+/** wie berechnet der browser die width und height?
+    standardbreite eines elements ist width + border-left + border-right + padding-left + padding-right */
+/** einfache lösung wenn padding / border die größe ungenau bestimmen lässt -> box-sizing auf border-box ändern, damit ist width inkl. border-left, border-right, padding-left und padding-right */
+
+.footer {
+    background-color: #BBB;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    position: fixed;
+    /** für positionierung top, left, right, bottom */
+    bottom: 0px;
+    width: 100%;
+    color: #666;
+    border-top: 5pt solid orange;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.footer a {
+    color: inherit;
+}
+
+.content {
+    padding-bottom: 70pt;
+}
 
 
+@media screen and (max-width: 900px) {
+    .container {
+        width: 100vw;
+    }
+    .newsletter input, .newsletter label {
+        width: 100%;
+        display: block;
+        text-align: left;
+    }
+    .newsletter input[type="checkbox"] {
+        display: inline;
+        width: auto;
+        margin-left: 0;
+    }
+}
 
