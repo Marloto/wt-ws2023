@@ -15,3 +15,7 @@ Host: de.wikipedia.org
 
 GET /resources/test.txt HTTP/1.1
 Host: online-lectures-cs.thi.de
+
+###
+
+GET https://online-lectures-cs.thi.de/chat/bffb9b9b-0e11-48fb-9628-47fb556ff457/user/JerryABC HTTP/1.1

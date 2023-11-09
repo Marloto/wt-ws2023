@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><input id="x" type="number" value="5"> x <input id="y" type="number" value="5"> <button onclick="readInformationAndGenerate()">Generate</button></p>
+    <p id="output"></p>
+    <script>
+        function readInformationAndGenerate() {
+            var xField = document.getElementById("x");
+            var yField = document.getElementById("y");
+    
+            var maxX = xField.value;
+            var maxY = yField.value;
+            console.log("Ausgabe", maxX, maxY);
+            generateTable(maxX, maxY);
+        }
+        function generateTable(maxX, maxY) {
+            var table = document.createElement("table");
+            var tbody = document.createElement("tbody");
+            for(var y = 1; y <= maxY; y ++) {
+                var tr = document.createElement("tr");
+                for(var x = 1; x <= maxX; x ++) {
+                    var td = document.createElement("td");
+                    //td.classList.add("foo");
+                    td.style.color = "red";
+                    td.innerHTML = x * y;
+                    tr.append(td);
+                }
+                tbody.append(tr);
+            }
+            document.getElementById("output").innerHTML = "";
+            table.append(tbody);
+            document.getElementById("output").append(table);
+            // innerHTML
+            // innerText
+            // table, tr, td, tbody
+        }
+
+        var buttons = document.getElementsByTagName("button");
+        var button = buttons[0];
+        // alt. document.getElementsByTagName("button")[0]
+        // alt. document.querySelector("button")
+        // button.onclick = readInformationAndGenerate;
+        button.addEventListener("click", readInformationAndGenerate);
+        // Ohne Klammern, wenn die Funktion übergeben werden soll, und nicht
+        // das Ergebnis des Aufrufs!
+        
+
+        // document dient als Einstieg
+        // -> suchen Sie als nächstes das Element
+        //    -> per Tag, per Class, per ID, per Selector
+        // -> finden Sie die Eigenschaft, die auslesen wollen
+        // -> ggf. console.dir(...) für Tests verwenden
+    </script>
+    <style>
+        .foo {
+            color: red;
+        }
+    </style>
+</body>
+</html>

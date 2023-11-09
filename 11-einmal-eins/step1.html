@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><input id="x"> x <input id="y"></p>
+    <script>
+        // var vs. let?
+        // -> let ist im Block gültig
+        var maxX = 5;
+        var maxY = 5;
+        function generateTable(maxX, maxY) {
+            for(var y = 1; y <= maxY; y ++) {
+                document.writeln(y + ": ");
+                for(var x = 1; x <= maxX; x ++) {
+                    document.writeln(x * y + " ");
+                }
+                document.writeln("<br>");
+            }
+        }
+        generateTable(maxX, maxY);
+
+
+    </script>
+</body>
+</html>

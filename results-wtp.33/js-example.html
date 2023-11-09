@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // for(var i = 0; i < 10; i ++) {
+        //     let element = document.createElement("p");
+        //     element.innerText = "Hallo, Welt!";
+        //     element.style.color = "white";
+        //     element.classList.add("bg");
+        //     document.body.appendChild(element);
+        // }
+
+        // // AJAX dient zum laden von Inhalt über HTTP
+        // // Grundlage ist die Klasse XMLHttpRequest
+        // var xmlhttp = new XMLHttpRequest();
+
+        // // Erklärt was passieren soll, wenn geladen
+        // // wurde...
+
+        // function handleResult() {
+        //     // Wichtig: nur wenn xmlhttp.readyState 4
+        //     // gesetzt wurde, ist die Anfrage fertig
+        //     if (xmlhttp.readyState == 4) {
+        //         // Überprüfen Sie den Status der
+        //         // Antwort der Anfrage, 200 ist OK
+        //         if (xmlhttp.status == 200) {
+        //             var res = xmlhttp.responseText
+        //             // alles machen... was notwendig ist!
+        //             console.log(res);
+        //             let element = document.createElement("p");
+        //             element.innerText = res;
+        //             element.style.color = "white";
+        //             element.classList.add("bg");
+        //             document.body.appendChild(element);
+        //         } else {
+        //             console.error("Fehler (" + xmlhttp.status + "): "
+        //                 + xmlhttp.responseText);
+        //         }
+        //     }
+        // }
+
+        // xmlhttp.onreadystatechange = handleResult;
+
+        // // Aufbau der Verbindung zu einer URL
+        // xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/test.txt", true);
+
+        // // Absenden der Anfrage an die zuvor geöffnete
+        // // URL
+        // xmlhttp.send();
+
+
+        // Was ist JSON -> Datenformat, (J)ava(S)cript(O)bject(N)otation
+        // Objekt erzeugen?
+        // var someObj = {"title": "ABC"};
+        // console.log(someObj.title);
+        // var someArr = [42, 21, 1];
+        // var someArrAndObj = [{"title": "ABC"}, {"title": "XYZ"}];
+
+        // var xmlhttp = new XMLHttpRequest();
+        // xmlhttp.onreadystatechange = function () {
+        //     if (xmlhttp.readyState == 4) {
+        //         if (xmlhttp.status == 200) {
+        //             console.log(xmlhttp.responseText);
+        //             let data = JSON.parse(xmlhttp.responseText);
+        //             console.log(data);
+        //             console.log(data[0].from)
+        //         } else {
+        //             console.error("Fehler (" + xmlhttp.status + "): "
+        //                 + xmlhttp.responseText);
+        //         }
+        //     }
+        // };
+        // xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/test.json", true);
+        // xmlhttp.send();
+
+        function checkUser(name) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 204) {
+                        console.log("Exists");
+                    } else if (xmlhttp.status == 404) {
+                        console.log("Does not exist");
+                    }
+                }
+            };
+            xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/bffb9b9b-0e11-48fb-9628-47fb556ff457/user/" + name, true);
+            xmlhttp.send();
+        }
+        checkUser("Tom2")
+    </script>
+</body>
+
+</html>
