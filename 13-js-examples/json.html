@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var rect = {"width": 100, "height": 100};
+        var arr = [1, 2, 3, 4];
+        var pos = [{"x": 10, "y": 0}, {"x": 10, "y": 10}];
+        //...
+        
+        
+        // Überführen in Zeichenketten, die JSON-Syntax verwenden
+        // -> JSON.stringify
+        var resRect = JSON.stringify(rect); // <- datentyp string!
+        console.log(rect);
+        console.log(resRect);
+        
+        var resArr = JSON.stringify(arr); // <- datentyp string!
+        console.log(arr);
+        console.log(resArr);
+
+        var resPos = JSON.stringify(pos); // <- datentyp string!
+        console.log(pos);
+        console.log(resPos);
+        
+        // Verarbeiten eines Strings der im JSON-Syntax bereit liegt
+        // -> JSON.parse
+
+        var rect2 = JSON.parse(resRect);
+        console.log(rect2);
+
+
+        var arr2 = JSON.parse("[1,2,3,4]");
+        // var arr2 = JSON.parse(resArr);
+        console.log(arr2);
+        console.log(arr2[0], arr2[1]);
+
+
+
+        var pos2 = JSON.parse(resPos);
+        console.log(pos2);
+        
+    </script>
+</body>
+</html>
