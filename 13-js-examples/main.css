@@ -200,6 +200,13 @@ a:hover {
 .newsletter .error-msg {
     color: red;
     font-size: 0.75em;
+    padding-left: 20%;
+}
+
+@media screen and (max-width: 900px) {
+    .newsletter .error-msg {
+        padding-left: 0;
+    }
 }
 
 

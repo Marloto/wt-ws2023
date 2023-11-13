@@ -110,7 +110,7 @@ function showNews(news) {
 
 // Load-Event als Alternative
 window.addEventListener("load", function() {
-    loadNews("http://localhost:5500/13-js-examples/news.json");
+    loadNews("https://online-lectures-cs.thi.de/resources/news.json");
 });
 
 
@@ -212,7 +212,7 @@ function validateForm(blacklist) {
 
 if(submitButton != null) {
     submitButton.addEventListener('click', function() {
-        loadBlacklist("http://localhost:5500/13-js-examples/blacklist.json")
+        loadBlacklist("https://online-lectures-cs.thi.de/resources/blacklist.json")
     });
 }
 
