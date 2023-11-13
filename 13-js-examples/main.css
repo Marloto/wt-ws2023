@@ -188,3 +188,13 @@ a:hover {
     }
 }
 
+
+p:hover {
+    background-color: #EEE;
+    cursor: pointer;
+}
+p::after {
+    content: "More >";
+    color: orange;
+    margin-left: 5pt;
+}
