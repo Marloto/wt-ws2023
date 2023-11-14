@@ -126,13 +126,6 @@ let newsletterForm = document.querySelector("#newsletter_form");
 let nameInput = document.querySelector("#newsletter_name");
 let mailInput = document.querySelector("#newsletter_mail");
 let submitButton = document.querySelector("#newsletter_save");
-// newsletterForm.addEventListener('submit', function(e) {
-//     let nameValue = nameInput.value;
-//     let mailValue = mailInput.value;
-//     console.log(nameValue, mailValue);
-//     // return false;
-    
-// })
 
 function loadBlacklist(url) {
     let res = new XMLHttpRequest();
@@ -211,8 +204,14 @@ function validateForm(blacklist) {
 }
 
 if(submitButton != null) {
-    submitButton.addEventListener('click', function() {
+    // Variante als <button type="button">...</button>
+    // submitButton.addEventListener('click', function() {
+    //     loadBlacklist("https://online-lectures-cs.thi.de/resources/blacklist.json")
+    // });
+    // Variante als <button type="submit">...</button>
+    newsletterForm.addEventListener('submit', function(e) {
         loadBlacklist("https://online-lectures-cs.thi.de/resources/blacklist.json")
+        e.preventDefault();
     });
 }
 
