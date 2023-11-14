@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+function sendRequest(name) {
+
+    // neue Instanz der Klasse XMLHttpRequest
+    var xmlhttp = new XMLHttpRequest();
+    var result = false;
+    xmlhttp.onreadystatechange = function () {
+        console.log("readystate...");
+        if (xmlhttp.readyState == 4) {
+            console.log("fertig");
+            // vgl. HTTP-Statuscode, 200 entspricht OK
+            if (xmlhttp.status == 200) {
+                // Zugriff auf antwort und ausgabe in Konsole
+                // -> data hat Datentyp string
+                let data = xmlhttp.responseText;
+                console.log(data);
+                // Ausgabe im Body:
+                // document.body.innerText = data;
+
+                var jsObj = JSON.parse(data);
+                for(let i = 0; i < jsObj.length; i ++) {
+                    let entry = jsObj[i];
+                    console.log(entry);
+                }
+
+    
+                // Aufgabe: Ausgabe des Textes, verwenden Sie die entsprechenden Ansätze um den Inhalt in einem Paragraph auszugeben
+    
+                let element = document.createElement("p");
+                element.innerText = data;
+                document.body.appendChild(element);
+    
+                // empfehlung: trennen Sie "HTTP-Logik" von "DOM-API-Logik"
+
+                result = true;
+            } else {
+                console.error("Fehler (" + xmlhttp.status + "): "
+                    + xmlhttp.responseText);
+            }
+        }
+    };
+    
+    // HTTP-METHOD (GET od. POST), URL, "true" -> async. od. sync (soll true bleiben) 
+    xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/" + name, true);
+    
+    // sendet daten ab, lässt sich mit parameter verwenden, z.B. xmlhttp.send(data);
+    xmlhttp.send();
+
+    // Note: das geht nicht, da antwort noch nicht da!
+    if(result == true) {
+        console.log("ist true!")
+    }
+
+    console.log("abgesendet...");
+}
+sendRequest("test.json");
+
+// Was ist JSON -> ist ein Datenformat, orientiert sich am Syntax für JavaScript Objekten
+    </script>
+</body>
+
+</html>

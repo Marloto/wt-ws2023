@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+window.backendUrl = "https://online-lectures-cs.thi.de/chat/a86b2bc9-414d-4014-9149-366b6823263a";
+function checkUser(username) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4) {
+            if(xmlhttp.status == 204) {
+                console.log("Exists");
+            } else if(xmlhttp.status == 404) {
+                console.log("Does not exist");
+            }
+        }
+    };
+    xmlhttp.open("GET", window.backendUrl + "/user/" + username, true);
+    xmlhttp.send();
+}
+// checkUser("");
+
+function listFriends() {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            let data = JSON.parse(xmlhttp.responseText);
+            console.log(data);
+        }
+    };
+    xmlhttp.open("GET", window.backendUrl + "/friend", true);
+    xmlhttp.setRequestHeader('Content-type', 'application/json');
+    xmlhttp.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVG9tIiwiaWF0IjoxNjk5OTc2MjQxfQ.2xBoQ4Ye9VHR2bwwK3hicvNGAmn8_9r85hFDqxnMbe0');
+    xmlhttp.send();
+}
+
+//listFriends();
+
+const tokenVonTom = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVG9tIiwiaWF0IjoxNjk5OTc2MjQxfQ.2xBoQ4Ye9VHR2bwwK3hicvNGAmn8_9r85hFDqxnMbe0";
+const tokenVonJerry = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiSmVycnkiLCJpYXQiOjE2OTk5NzYyNDF9.RT9GLpOqnaifT83yOd6d6TmcWY7UfKySUOo3mz2ilAU";
+
+function listMessages(to, fromToken) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            let data = JSON.parse(xmlhttp.responseText);
+            console.log(data);
+        }
+    };
+    xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/a86b2bc9-414d-4014-9149-366b6823263a/message/" + to, true);
+    // Add token, e. g., from Tom
+    xmlhttp.setRequestHeader('Authorization', 'Bearer ' + fromToken);
+    xmlhttp.send();
+}
+listMessages("Jerry", tokenVonTom);
+// listMessages("Tom", tokenVonJerry);
+    </script>
+</body>
+</html>

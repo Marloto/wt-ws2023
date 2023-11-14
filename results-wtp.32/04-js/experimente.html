@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--p onclick="alert('hello, world!')"></p-->
+    <script>
+// erstellen eines neuen paragraph-Elements
+let element = document.createElement("p");
+// füllen des Tags mit einem Text
+element.innerHTML = "Hallo, <em>Welt</em>!";
+// Showcase
+console.log(element);
+console.dir(element);
+// CSS-Klassen ergänzen
+element.classList.add("some-class");
+element.style.color = "red";
+// Event-Attribute lassen sich befüllen, aber nicht
+// als Zeichenkette, es muss eine Funktions verwendet
+// werden!
+element.onclick = function() {
+    alert('abc...');
+};
+// hinzufügen zum Body, mit finaler Anzeige
+document.body.appendChild(element);
+
+// Was gab es für Attribute an anderen HTML-Elementen
+// Beispiel Input
+// -> value
+let element2 = document.createElement("input");
+element2.value = "ABC!!";
+element2.id = "xyz";
+element2.name = "something";
+// Zugriff über getAttribute und setAttribute immer möglich
+let id = element2.getAttribute("id");
+// es lassen sich Attribute setzen, die ggf. 
+// auch kein sinn machen
+element2.setAttribute("href", "https://google.com");
+document.body.appendChild(element2);
+    </script>
+</body>
+</html>
