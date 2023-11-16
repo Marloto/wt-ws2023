@@ -24,7 +24,7 @@
                     console.log(data);
                 }
             };
-            xmlhttp.open("GET", backendUrl + "friend", true);
+            xmlhttp.open("GET", backendUrl + "/friend", true);
             xmlhttp.setRequestHeader('Content-type', 'application/json');
             // Weist aus, wer die aktuelle Anfrage stellt (von welchem Account)
             // Hiermit wird die Anfrage mit Tom gestellt
@@ -39,7 +39,7 @@
                     console.log("Requested...");
                 }
             };
-            xmlhttp.open("POST", backendUrl + "friend", true);
+            xmlhttp.open("POST", backendUrl + "/friend", true);
             xmlhttp.setRequestHeader('Content-type', 'application/json');
             xmlhttp.setRequestHeader('Authorization', 'Bearer ' + chatToken);
             let data = {
