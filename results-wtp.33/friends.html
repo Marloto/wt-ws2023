@@ -14,6 +14,7 @@
     <script>
         window.currentUser = "Tom";
         window.chatToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVG9tIiwiaWF0IjoxNzAwMTM3NDMyfQ.WqZXSddmyBrv-E0DWUTvgeSyTT9SHGLh7Np59w0BU1c";
+        window.backendUrl = "https://online-lectures-cs.thi.de/chat/cf0c8bae-1681-4dce-b8ed-3fe8f32a9079";
 
         function loadFriends() {
             let xmlhttp = new XMLHttpRequest();
@@ -23,14 +24,33 @@
                     console.log(data);
                 }
             };
-            xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/cf0c8bae-1681-4dce-b8ed-3fe8f32a9079/friend", true);
+            xmlhttp.open("GET", backendUrl + "friend", true);
             xmlhttp.setRequestHeader('Content-type', 'application/json');
             // Weist aus, wer die aktuelle Anfrage stellt (von welchem Account)
             // Hiermit wird die Anfrage mit Tom gestellt
-            xmlhttp.setRequestHeader('Authorization', 'Bearer ' + chatToken);
+            xmlhttp.setRequestHeader('Authorization', 'Bearer ' + chatToken); // <-
             xmlhttp.send();
         }
-        loadFriends();
+
+        function addFriend(friendToAdd) {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 204) {
+                    console.log("Requested...");
+                }
+            };
+            xmlhttp.open("POST", backendUrl + "friend", true);
+            xmlhttp.setRequestHeader('Content-type', 'application/json');
+            xmlhttp.setRequestHeader('Authorization', 'Bearer ' + chatToken);
+            let data = {
+                username: friendToAdd
+            };
+            let jsonString = JSON.stringify(data);
+            xmlhttp.send(jsonString); // <- bei POST wird ein Datenpaket notwendig
+        }
+        // addFriend("Tom");
+        // listFriends();
+
     </script>
 </body>
 
