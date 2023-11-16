@@ -18,4 +18,4 @@ Host: online-lectures-cs.thi.de
 
 ###
 
-GET https://online-lectures-cs.thi.de/chat/bffb9b9b-0e11-48fb-9628-47fb556ff457/user/JerryABC HTTP/1.1
+GET https://online-lectures-cs.thi.de/chat/cf0c8bae-1681-4dce-b8ed-3fe8f32a9079/user/Tom HTTP/1.1

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function loadData(name) {
+            
+            // Erzeugt Instanz von XMLHttpRequest
+            var xmlhttp = new XMLHttpRequest();
+
+            /*xmlhttp.something = function () { ... };
+            
+            function doSomething() { // <- Erzeugung der Funktion
+                // ...
+                return 42;
+            }
+            doSomething(); // <- Aufruf
+            var somethingElse = doSomething;
+            somethingElse();
+            doSomething();
+
+            xmlhttp.onreadystatechange = doSomething;*/
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) { // einfach übernehmen
+                    if (xmlhttp.status == 200) { // prüfen HTTP-Status
+                        var data = xmlhttp.responseText; // Typ String
+                        var parsed = JSON.parse(data);
+                        console.log(parsed);
+                        console.log(parsed[0]);
+                        console.log(parsed[0].msg);
+                        for(var i = 0; i < parsed.length; i ++) {
+                            var element = document.createElement("p");
+                            element.innerText = parsed[i].msg;
+                            document.body.appendChild(element);
+                        }
+                    } else {
+                        console.error("Fehler (" + xmlhttp.status + "): " + xmlhttp.responseText);
+                    }
+                }
+            };
+            
+            // HTTP-Methode + URL, zzgl. true (sync / asynchronous)
+            xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/" + name, true); 
+
+            // Absenden der Anfragen
+            xmlhttp.send();
+        }
+        loadData("test.json");
+    </script>
+</body>
+
+</html>

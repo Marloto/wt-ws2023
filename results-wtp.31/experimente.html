@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .some-class {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+// neues p-Element (paragraphen)
+let element = document.createElement("p");
+// p-Element erhält als Text-Inhalt "Hallo, Welt!"
+element.innerText = "Hallo, Welt!";
+// Class-Attribut verändern
+// -> zum benennen von bestimmten Style Eigenschaften
+//    welche dann verschiedenen elementen über class="..."
+//    zugewiesen werden
+element.classList.add("some-class");
+// ID Attribut setzen
+// -> Fragmente (#...) in URL und ID?
+// -> mit IDs in CSS arbeiten zum selektieren
+element.id = "some-id";
+element.setAttribute("href", "123");
+element.style.backgroundColor = "red";
+console.log(element.getAttribute("href"));
+
+// Platzieren auf der Seite, bzw. body
+document.body.appendChild(element);
+
+// Finden von Elementen: getElementById, getElementsByClassName, getElementsByTagName
+console.log(document.getElementsByTagName("title"));
+
+// Strings in JavaScript
+var str1 = "Test";
+var str2 = 'Test';
+var str3 = `Test`;
+    </script>
+    <button onclick='alert("foo")'></button>
+    <button onclick="alert('foo')"></button>
+</body>
+</html>

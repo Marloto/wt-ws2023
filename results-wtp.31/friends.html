@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                let data = JSON.parse(xmlhttp.responseText);
+                console.log(data);
+            }
+        };
+        xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/d71470fe-9c14-411d-8483-76d3fb0d85b6/friend", true);
+        xmlhttp.setRequestHeader('Content-type', 'application/json');
+        xmlhttp.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVG9tIiwiaWF0IjoxNzAwMDYxNDQ2fQ.h5FlnYc6heDhT0zx1havjLTUT5vcUQ-gofvvggFKdH8');
+        xmlhttp.send();
+    </script>
+</body>
+
+</html>

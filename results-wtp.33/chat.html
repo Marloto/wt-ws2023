@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const tokenVonTom = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVG9tIiwiaWF0IjoxNzAwMTM3NDMyfQ.WqZXSddmyBrv-E0DWUTvgeSyTT9SHGLh7Np59w0BU1c";
+        const tokenVonJerry = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiSmVycnkiLCJpYXQiOjE3MDAxMzc0MzJ9.8_lqJweB3cqg70dAAZzxH8bcISPRds19VjnfAZIGP50";
+        const chatToken = tokenVonTom;
+
+        // abfrage zw. Tom und Jerry
+        function loadMessages(fromToken, toUser) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    let data = JSON.parse(xmlhttp.responseText);
+                    console.log(data);
+                    // -> mit der DOM-API Elemente erstellen (vgl. createElement)
+                    // -> appendChild an entsprechender Stelle im Dokument
+                    // -> erkennen, was schon mal geladen wurde
+                }
+            };
+            xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/cf0c8bae-1681-4dce-b8ed-3fe8f32a9079/message/" + toUser, true);
+            // Add token, e. g., from Tom
+            xmlhttp.setRequestHeader('Authorization', 'Bearer ' + fromToken);
+            xmlhttp.send();
+        }
+
+        // window.setInterval(function() {
+            loadMessages(tokenVonJerry, "Tom");
+        // }, 1000);
+    </script>
+</body>
+
+</html>

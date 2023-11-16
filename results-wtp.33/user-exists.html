@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkUser(username) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 204) {
+                        console.log("Exists");
+    
+                        // -> informieren, dass der name nicht existiert
+                        // -> DOM-API könnte das passende Input-Element suchen, und dann mittels classList od. style den Rahmen rot färben
+                    } else if (xmlhttp.status == 404) {
+                        console.log("Does not exist");
+                        
+                        // -> absenden des formulars wenn alles (andere) stimmt
+                        // -> DOM-API das Form-Tag-Element beziehen und an dem Element die submit() Methode aufrufen
+                    }
+                }
+            };
+            xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/cf0c8bae-1681-4dce-b8ed-3fe8f32a9079/user/" + username, true);
+            xmlhttp.send();
+        }
+
+
+        checkUser("Tom");
+        checkUser("Jerry");
+    </script>
+</body>
+
+</html>
