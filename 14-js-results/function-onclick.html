@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Document</title>
+</head>
+<body>
+    <script>
+      function doStuff() {
+        var value = document
+          .getElementById('content').value;
+        if(!value)
+          return;
+        var el = document
+          .createElement('p');
+        el.textContent = value;
+        document.body.append(el);
+      }
+    </script>
+    <input id="content">
+    <button onclick="doStuff()">Click!
+        </button>
+</body>
+</html>
