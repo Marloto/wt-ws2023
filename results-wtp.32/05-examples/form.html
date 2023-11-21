@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="some-form">
+        <input type="text" id="text">
+        <button>Absenden</button>
+    </form>
+    <script>
+        var myForm = document.getElementById("some-form");
+        myForm.addEventListener('submit', function(el) {
+            el.preventDefault();
+            // document.getElementById("text").value
+            // -> überprüfen ob z.B. length
+            if(document.getElementById("text").value.length < 3) {
+                console.log("To short!");
+            } else {
+                checkUserExists(document.getElementById("text").value);
+            }
+
+        });
+
+        function checkUserExists(username) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if(xmlhttp.status == 204) {
+                        console.log("Exists"); // <- formular markieren!
+                    } else if(xmlhttp.status == 404) {
+                        myForm.submit();
+                    }
+                }
+            };
+            xmlhttp.open("GET", "https://online-lectures-cs.thi.de/chat/f2453b14-122b-4590-bd2f-cfc3a4ec08ae/user/" + username, true);
+            xmlhttp.send();
+        }
+
+        
+    </script>
+</body>
+</html>
