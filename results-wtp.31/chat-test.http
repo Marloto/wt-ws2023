@@ -1,0 +1,23 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVG9tIiwiaWF0IjoxNzAwNjY0NzEzfQ.wIAs6-_wN30eO7IxWmcZVe1g6CglV1yEUJmST74esdA
+@collectionId = 2dffd1a7-7a1f-4ab2-85ef-9cc93e7f01d7
+
+GET https://online-lectures-cs.thi.de/chat/{{collectionId}}/friend
+Authorization: Bearer {{token}}
+
+###
+
+DELETE https://online-lectures-cs.thi.de/chat/{{collectionId}}/friend/Trick
+Authorization: Bearer {{token}}
+
+###
+
+POST https://online-lectures-cs.thi.de/chat/{{collectionId}}/friend
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{"username": "Jerry"}
+
+###
+
+GET https://online-lectures-cs.thi.de/chat/{{collectionId}}/message/Jerry
+Authorization: Bearer {{token}}
