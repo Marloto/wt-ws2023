@@ -2,6 +2,26 @@
 @jerryToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiSmVycnkiLCJpYXQiOjE3MDA2NjQ3MTN9.5BQSANMQqVfNpj6MeQ6WVGv4NvWZVxb9zR2sTzirv_U
 @collectionId = 2dffd1a7-7a1f-4ab2-85ef-9cc93e7f01d7
 
+### Register New User
+
+POST https://online-lectures-cs.thi.de/chat/{{collectionId}}/register
+Content-Type: application/json
+
+{
+    "username": "Tom3",
+    "password": "12345678"
+}
+
+### Login New User
+
+POST https://online-lectures-cs.thi.de/chat/{{collectionId}}/login
+Content-Type: application/json
+
+{
+    "username": "Tom",
+    "password": "12345678"
+}
+
 ### Load Friends
 
 GET https://online-lectures-cs.thi.de/chat/{{collectionId}}/friend

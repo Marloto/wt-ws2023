@@ -1,0 +1,63 @@
+@tomToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVG9tIiwiaWF0IjoxNzAwNjY0NzEzfQ.wIAs6-_wN30eO7IxWmcZVe1g6CglV1yEUJmST74esdA
+@jerryToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiSmVycnkiLCJpYXQiOjE3MDA2NjQ3MTN9.5BQSANMQqVfNpj6MeQ6WVGv4NvWZVxb9zR2sTzirv_U
+@collectionId = 2dffd1a7-7a1f-4ab2-85ef-9cc93e7f01d7
+
+### Register New User
+
+POST https://online-lectures-cs.thi.de/chat/{{collectionId}}/register
+Content-Type: application/json
+
+{
+    "username": "Tom3",
+    "password": "12345678"
+}
+
+### Login New User
+
+POST https://online-lectures-cs.thi.de/chat/{{collectionId}}/login
+Content-Type: application/json
+
+{
+    "username": "Tom",
+    "password": "12345678"
+}
+
+### Load Friends
+
+GET https://online-lectures-cs.thi.de/chat/{{collectionId}}/friend
+Authorization: Bearer {{tomToken}}
+
+### Delete Friend Jerry
+
+DELETE https://online-lectures-cs.thi.de/chat/{{collectionId}}/friend/Jerry
+Authorization: Bearer {{tomToken}}
+
+### Add Jerry as Friend
+
+POST https://online-lectures-cs.thi.de/chat/{{collectionId}}/friend
+Content-Type: application/json
+Authorization: Bearer {{tomToken}}
+
+{"username": "Jerry"}
+
+### Get Messages from Tom to Jerry (reset unread to 0)
+
+GET https://online-lectures-cs.thi.de/chat/{{collectionId}}/message/Jerry
+Authorization: Bearer {{tomToken}}
+
+
+### Send from Tom to Jerry
+
+POST https://online-lectures-cs.thi.de/chat/{{collectionId}}/message
+Content-Type: application/json
+Authorization: Bearer {{tomToken}}
+
+{"message": "Example", "to": "Jerry"}
+
+### Send from Jerry to Tom (creates Unread)
+
+POST https://online-lectures-cs.thi.de/chat/{{collectionId}}/message
+Content-Type: application/json
+Authorization: Bearer {{jerryToken}}
+
+{"message": "Example", "to": "Tom"}
