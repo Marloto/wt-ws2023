@@ -80,7 +80,7 @@ function showNews(news) {
         textElement.classList.add("more");
         titleElement.innerText = news[i].title;
 
-        let text = news[i].text;
+        let text = news[i].content;
         let rest = "";
         if(text.length > 100) {
             rest = text.substring(100);
@@ -110,7 +110,7 @@ function showNews(news) {
 
 // Load-Event als Alternative
 window.addEventListener("load", function() {
-    loadNews("https://online-lectures-cs.thi.de/resources/news.json");
+    loadNews("news.php");
 });
 
 

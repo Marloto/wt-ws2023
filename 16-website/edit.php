@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 ini_set('display_errors', 1);
-require("more.php");
 
 // wie unterscheiden zw. "formular anzeigen" und "formular abgesendet"
 // 1. Maßnahme: Prüfen ob das Formular abgesendet wurde
@@ -17,44 +16,7 @@ $state = "";
 $rights = "";
 $foo = "";
 
-$folder = "files";
-function saveArticle($id, $title, $content, $publishedAt, $author, $state, $rights, $foo)
-{
-    global $folder;
-    $path = $folder . "/" . $id . ".json";
-    $articleData = array(
-        "id" => $id,
-        "title" => $title,
-        "content" => $content,
-        "publishedAt" => $publishedAt,
-        "author" => $author,
-        "state" => $state,
-        "rights" => $rights,
-        "foo" => $foo
-    );
-    $rawData = json_encode($articleData);
-    $fp = fopen($path, 'w');
-    fwrite($fp, $rawData);
-    fclose($fp);
-}
-
-function loadArticle($id)
-{
-    global $folder;
-    $path = $folder . "/" . $id . ".json";
-    if (file_exists($path)) {
-        $rawData = file_get_contents($path);
-        $articleData = json_decode($rawData);
-        return $articleData;
-    }
-}
-
-function listArticles()
-{
-    global $folder;
-    return array_diff(scandir($folder), array('..', '.'));
-}
-
+require("articles.php");
 
 // Entweder Felder auf existenz prüfen, oder es gibt ein Action-Information wie über einen button, mit dessen Wert z.B. geprüft werden kann welche Aktion durchzuführen ist
 if (isset($_POST["action"])) {
@@ -109,7 +71,7 @@ if (isset($_POST["action"])) {
 
 // Einlesen
 if (!empty($id)) {
-    $article = loadArticle($_GET["id"]);
+    $article = loadArticle($id);
 
     // var_dump($article);
     $title = $article->title;
