@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (async function() {
+            // Produziert einen Promise
+            function doSomething(a) {
+                // übergeben einer Funktion, die wird intern aufgerufen
+                // ihre Aufgabe: führen Sie die Algorithmik durch
+                // wenn fertig, dann rufen Sie entweder resolve (positiv)
+                // oder reject (negativ)
+                return new Promise(function(resolve, reject) {
+                    let res = 42;
+                    window.setTimeout(function() {
+                        res += a;
+                        if(a == 0) {
+                            //errorHandler("Bad parameter")
+                            reject("Bad parameter")
+                        } else {
+                            //callback(res);
+                            resolve(res);
+                        }
+                    }, 5000);
+                    console.log("b", res);
+                });
+            }
+            
+            // let foo = doSomething(1);
+            // foo.then(function(res) {
+            //     console.log("a", res);
+            // }).catch(function(err) {
+            //     console.error(err);
+            // });
+            
+            let foo = await doSomething(1);
+
+            console.log("c", foo);
+        })();
+    </script>
+</body>
+</html>

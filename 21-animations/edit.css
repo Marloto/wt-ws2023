@@ -1,110 +1,171 @@
 .tree-dark-img,
 .tree-light-img {
-    
+    transform: translate(-10vh, -7.5vh);
 }
 
 .trunk-img {
-    
+    transform: translate(-5.5vh, -6vh);
 }
 
 .shadow-img {
-    
+    transform: translate(-10vh, -10vh) scale(1, 0.2);
 }
 
 .star-img {
-    
+    transform: translate(-4vh, -4vh);   
 }
 
 .tree-part-1 {
-
+    transform: scale(1);
 }
 .tree-part-2 {
-    
+    transform: scale(1.2);
 }
 .tree-part-3 {
-
+    transform: scale(1.4);
 }
 .tree-part-4 {
-
+    transform: scale(1.8);
 }
 .tree-part-5 {
-    
+    transform: scale(2.2);
 }
 
 .tree-part-p1 {
-    
+    opacity: 0;
+    animation: tree-part-animation 0.75s ease 0.7s forwards;
 }
 .tree-part-p2 {
-    
+    opacity: 0;
+    animation: tree-part-animation 0.75s ease 0.6s forwards;
 }
 .tree-part-p3 {
-    
+    opacity: 0;
+    animation: tree-part-animation 0.75s ease 0.5s forwards;
 }
 .tree-part-p4 {
-    
+    opacity: 0;
+    animation: tree-part-animation 0.75s ease 0.4s forwards;
 }
 .tree-part-p5 {
-    
+    opacity: 0;
+    animation: tree-part-animation 0.75s ease 0.3s forwards;
 }
 
 /** add tree-part-animation */
 @keyframes tree-part-animation {
-    
+    0% {
+        opacity: 0;
+        transform: translateY(20vh) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0vh) scale(1);
+    }
 }
 
 .sphere-p1 {
-
+    opacity: 0;
+    animation: sphere-animation 1s ease 0.9s forwards;
 }
 .sphere-p2 {
-
+    opacity: 0;
+    animation: sphere-animation 1s ease 1s forwards;
 }
 .sphere-p3 {
-
+    opacity: 0;
+    animation: sphere-animation 1s ease 1.2s forwards;
 }
 .sphere-p4 {
-
+    opacity: 0;
+    animation: sphere-animation 1s ease 1.4s forwards;
 }
 .sphere-p5 {
-
+    opacity: 0;
+    animation: sphere-animation 1s ease 1.6s forwards;
 }
 
 /** add sphere-animation */
 @keyframes sphere-animation {
-
+    0% {
+        opacity: 0;
+        transform: translateY(-4vh) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0vh) scale(1);
+    }
 }
 
 .candy-p1 {
-
+    opacity: 0;
+    animation: candy-animation-1 1s ease 1.5s forwards;
 }
 
 /** add candy-animation-1 */
 @keyframes candy-animation-1 {
-
+    0% {
+        opacity: 0;
+        transform: rotate(180deg) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(10deg) scale(1);
+    }
 }
 
 .candy-p2 {
-
+    opacity: 0;
+    animation: candy-animation-2 1s ease 1.3s forwards;
 }
 
 /** add candy-animation-2 */
 @keyframes candy-animation-2 {
-    
+    0% {
+        opacity: 0;
+        transform: rotate(180deg) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(-10deg) scale(-1, 1);
+    }
 }
 
 .star {
-
+    opacity: 0;
+    animation: star-animation 1s ease 1.7s forwards;
 }
 
 /** add star-animation*/
 @keyframes star-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
     
 }
 
 .trunk {
-    
+    opacity: 0;
+    animation: trunk-animation 0.5s ease forwards;
 }
 
 /** add trunk-animation */
 @keyframes trunk-animation {
-    
+    0% {
+        opacity: 0;
+        transform: translateY(5vh) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0vh) scale(1);
+    }
 }

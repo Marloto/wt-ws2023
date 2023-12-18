@@ -7,9 +7,35 @@
 </head>
 <body>
     <script>
-        (async function() {
+
+        // callback vom Datentyp Function sein
+        function callHttpFunction(callback) {
+            console.log("A", "Start"); // 1.
+            let request = new XMLHttpRequest();
+            let response = undefined;
+            request.onreadystatechange = function() {
+                // wird später ausgeführt
+                // 3., 6., 7., 8.
+                console.log("B", request.readyState, request.status, request.responseText ? request.responseText.length : 0);
+                if(request.readyState == 4) {
+                    response = request.responseText;
+                    callback(request.status, response);
+                }
+            };
             
-        })();
+            console.log("C", "Before Open"); // 2.
+            request.open('GET', 'data.txt');
+            console.log("D", "Before Send"); // 4.
+
+            request.send();
+            console.log("E", "End Send"); // 5.
+            return response;
+        }
+
+        let foo = callHttpFunction(function(status, resp) {
+            console.log("G")
+        });
+        console.log("F", foo);
     </script>
 </body>
 </html>

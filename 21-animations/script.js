@@ -10,5 +10,6 @@ for(let i = 0; i < 50; i ++) {
     div.style.setProperty('--left-end', (pos + end) + "vw")
     div.style.setProperty('--duration', (5 + Math.random() * 10) + "s")
     div.style.setProperty('--delay', (Math.random() * 10) + "s")
-    document.getElementsByClassName(Math.random() < 0.5 ? 'before' : 'after')[0].appendChild(div);
+    document.getElementsByClassName(Math.random() < 0.5 ? 
+    'before' : 'after')[0].appendChild(div);
 }
