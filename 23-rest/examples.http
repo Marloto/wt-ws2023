@@ -1,0 +1,20 @@
+GET http://localhost/21-rest/meme HTTP/1.1
+
+###
+
+GET http://localhost/21-rest/meme/659be12274288 HTTP/1.1
+
+###
+
+GET http://localhost/21-rest/meme/567 HTTP/1.1
+
+###
+
+POST http://localhost/21-rest/meme HTTP/1.1
+Content-Type: application/json
+
+{
+  "upperText": "images\/1c7cy8.jpg",
+  "lowerText": "Abc...",
+  "memeUrl": "Xyz..."
+}
